@@ -85,3 +85,8 @@ export const refreshToken = (req, res) => {
       .send({ error: TokenVerificationErrors[error.message] })
   }  
 }
+
+export const logout = (req, res) => {
+  res.clearCookie('refreshToken')
+  res.json({ ok: true })
+}
