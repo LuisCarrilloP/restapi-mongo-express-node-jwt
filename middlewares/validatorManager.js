@@ -54,8 +54,7 @@ export const bodyLinkValidator = [
     .notEmpty()
     .custom(async value => {
       try {
-
-        if(!value.startsWith('http://')){
+        if(!value.startsWith('https://')){
           value = "https://" + value
         }
         console.log(value);
