@@ -39,7 +39,6 @@
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
           },
-          //credentials: 'include'
         })
         console.log(res.ok, res.status);
         const data = await res.json()
