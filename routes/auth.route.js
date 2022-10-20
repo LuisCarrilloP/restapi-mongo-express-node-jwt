@@ -1,10 +1,10 @@
 import { Router } from 'express'
-import { infoUser, login, register, refreshToken, logout } from "../controllers/auth.controller.js";
 import { body } from 'express-validator'
-import { validationResultExpress } from "../middlewares/validationResultExpress.js";
+import { infoUser, login, register, refreshToken, logout } from "../controllers/auth.controller.js";
 import { requireToken } from '../middlewares/requireToken.js';
 import { requireRefreshToken } from '../middlewares/requireRefreshToken.js';
 import { loginValidator, registerValidator } from '../middlewares/validatorManager.js';
+
 const router = Router()
 
 router.post('/register', registerValidator, register)

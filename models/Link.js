@@ -1,6 +1,5 @@
-import mongoose, { mongo } from "mongoose";
-
-const { Schema } = mongoose
+import mongoose from "mongoose";
+const { Schema, model } = mongoose
 
 const linkSchema = new Schema({
   longLink: {
@@ -10,9 +9,9 @@ const linkSchema = new Schema({
   },
   nanoLink: {
     type: String,
-    unique: true,
     required: true,
-    trim: true
+    trim: true,
+    unique: true,
   },
   uid: {
     type: Schema.Types.ObjectId,
@@ -21,4 +20,4 @@ const linkSchema = new Schema({
   }
 })
 
-export const Link = mongoose.model("Link", linkSchema)
+export const Link = model("Link", linkSchema)

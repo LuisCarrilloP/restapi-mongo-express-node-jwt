@@ -52,17 +52,16 @@ export const bodyLinkValidator = [
   body("longLink", "formato link incorrecto")
     .trim()
     .notEmpty()
-    .custom(async value => {
+    .custom(async (value) => {
       try {
         if(!value.startsWith('https://')){
           value = "https://" + value
         }
-        console.log(value);
-
         await axios.get(value)
         return value
+
       } catch (error) {
-        console.log(error);
+        //console.log(error);
         throw new Error("not found longlink 404")
       }
     })
