@@ -62,7 +62,7 @@ export const bodyLinkValidator = [
 
       } catch (error) {
         //console.log(error);
-        throw new Error("not found longlink 404")
+        throw new Error("Link inválido")
       }
     })
     ,

@@ -29,11 +29,11 @@ export const login = async(req, res) => {
     const { email, password } = req.body
 
     let user = await User.findOne({ email })
-    if(!user) return res.status(403).json({ error: "Invalid credentials" }) //Usuario no encontrado
+    if(!user) return res.status(403).json({ error: "Invalid credentials(usuario borrar!)" }) //Usuario no encontrado
 
     const respuestaPassword = await user.comparePassword(password)
     if(!respuestaPassword){
-      return res.status(403).json({ error: "Invalid credentials" }) //Contraseña Incorrecta
+      return res.status(403).json({ error: "Invalid credentials(password borrar!)" }) //Contraseña Incorrecta
     }
 
     //Generar token JWT
