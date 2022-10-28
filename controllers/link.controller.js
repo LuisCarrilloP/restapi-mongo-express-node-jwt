@@ -8,7 +8,7 @@ export const getLinks = async(req, res) => {
 
   } catch (error) {
     console.log(error);
-    return res.status(500).json({error: 'error de servidor'})
+    return res.status(500).json({error: 'error de servidor getLinks'})
 
   }
 }
@@ -27,7 +27,7 @@ export const getLink = async(req, res) => {
     if(error.kind === "ObjectId"){
       return res.status(403).json({ error: "Formato id incorrecto"})
     } 
-    return res.status(500).json({ error: "error de servidor"})
+    return res.status(500).json({ error: "error de servidor getLink"})
   }
 }
 
@@ -45,7 +45,7 @@ export const getLinkCRUD = async(req, res) => {
     if(error.kind === "ObjectId"){
       return res.status(403).json({ error: "Formato id incorrecto"})
     } 
-    return res.status(500).json({ error: "error de servidor "})
+    return res.status(500).json({ error: "error de servidor getLinkCRUD"})
   }
 }
 
@@ -65,7 +65,7 @@ export const createLink = async (req, res) => {
 
   } catch (error) {
     console.log(error);
-    return res.status(500).json({error: 'error de servidor'})
+    return res.status(500).json({error: 'error de servidor createLink'})
   }
 }
 
@@ -86,7 +86,7 @@ export const removeLink = async(req, res) => {
     if(error.kind === "ObjectId"){
       return res.status(403).json({ error: "Formato id incorrecto" })
     }
-    return res.status(500).json({ error: "error de servidor"})
+    return res.status(500).json({ error: "error de servidor removeLink"})
   }
 }
 
@@ -117,7 +117,7 @@ export const updateLink = async(req, res) => {
     if(error.kind === "ObjectId"){
       return res.status(403).json({ error: "Formato id incorrecto" })
     }
-    return res.status(500).json({ error: "error de servidor"})
+    return res.status(500).json({ error: "error de servidor updateLink"})
 
   }
 }
