@@ -13,6 +13,6 @@ export const redirectLink = async (req, res) => {
         if (error.kind === "ObjectId") {
             return res.status(403).json({ error: "Formato id incorrecto" });
         }
-        return res.status(500).json({ error: "error de servidor" });
+        return res.status(500).json({ error: "error de servidor redirectLink" });
     }
 };
